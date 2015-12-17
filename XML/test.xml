@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<s:Envelope xmlns:s="http://schemas.xmlsoap.org/soap/envelope/">
+	<s:Header>
+		<h:Security xmlns:h="http://schemas.xmlsoap.org/ws/2002/12/secext"
+			xmlns="http://schemas.xmlsoap.org/ws/2002/12/secext" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+			xmlns:xsd="http://www.w3.org/2001/XMLSchema">
+			<BinarySecurityToken>
+				Shared/IDL:IceSess\/SessMgr:1\.0.IDL/Common/!ICESMS\/RESG!ICESMSLB\/RES.LB!-4261384276589155455!1033198!0
+			</BinarySecurityToken>
+		</h:Security>
+		<h:MessageHeader xmlns:h="http://www.ebxml.org/namespaces/messageHeader"
+			xmlns="http://www.ebxml.org/namespaces/messageHeader">
+			<From>
+				<PartyId a:type="urn:x12.org:IO5:01" xmlns:a="http://www.ebxml.org/namespaces/messageHeader">
+					99999
+				</PartyId>
+			</From>
+			<To>
+				<PartyId a:type="urn:x12.org:IO5:01" xmlns:a="http://www.ebxml.org/namespaces/messageHeader">
+					123123
+				</PartyId>
+			</To>
+			<CPAId>0PUB</CPAId>
+			<ConversationId>TestSession</ConversationId>
+			<Service a:type="Orchestrated Web Service" xmlns:a="http://www.ebxml.org/namespaces/messageHeader">
+				PassengerDetailsRQ
+			</Service>
+			<Action>PassengerDetailsRQ</Action>
+			<MessageData>
+				<MessageId>Joop</MessageId>
+				<Timestamp>2009-09-30T10:41:59</Timestamp>
+			</MessageData>
+			<Description>PassengerDetailsRQ</Description>
+		</h:MessageHeader>
+	</s:Header>
+	<s:Body>
+		<PassengerDetailsRQ Version="OTA_2007A.TsabreXML1.1.1" Target="Test"
+			xmlns="http://webservices.sabre.com/sabreXML/2003/07">
+			<POS>
+				<Source PseudoCityCode="0PUB" />
+			</POS>
+			<IgnoreOnError Ind="true" />
+			<TravelerInfo>
+				<PersonName TravelerRefNumber="0.1">
+					<GivenName>yujie</GivenName>
+					<Surname>chen</Surname>
+				</PersonName>
+				<Telephone PhoneNumber="13922222222" TravelerRefNumber="0.1" />
+				<Email TravelerRefNumber="0.1" EmailAddress="yjchen@usky.com.cn" EmailType="To">
+					<Text>my first time to Sabre</Text>
+				</Email>
+				<Address>
+					<TPA_Extensions>
+						<AgencyName>Flightengine.com</AgencyName>
+					</TPA_Extensions>
+					<StreetNmbr>Holtgesbroek 1014</StreetNmbr>
+					<CityName>Nijmegen</CityName>
+					<PostalCode>6546 PA</PostalCode>
+					<StateCountyProv StateCode="AMS" />
+					<CountryName Code="NL" />
+				</Address>
+				<Ticketing TicketType="7TAW/" TicketTimeLimit="2009-10-07" PseudoCityCode="0PUB" QueueNumber="9"
+					ShortText="Queue for testing" />
+			</TravelerInfo>
+			<SpecialReqDetails>
+				<SeatRequests>
+					<SeatRequest ItinSeqNumber="1" TravelerRefNumber="0.1" SeatNumber="13B" />
+				</SeatRequests>
+			</SpecialReqDetails>
+			<EndTransactionRQ>
+				<UpdatedBy>
+					<TPA_Extensions>
+						<Access>
+							<AccessPerson>
+								<GivenName>FE</GivenName>
+							</AccessPerson>
+						</Access>
+					</TPA_Extensions>
+				</UpdatedBy>
+				<EndTransaction Ind="true">
+					<SendEmail Ind="true" />
+				</EndTransaction>
+			</EndTransactionRQ>
+		</PassengerDetailsRQ>
+	</s:Body>
+</s:Envelope>

@@ -1,0 +1,9 @@
+eclipse.preferences.version=1
+encoding//src/org/tempuri/AccountPlatService.java=UTF-8
+encoding//src/org/tempuri/AccountPlatServiceLocator.java=UTF-8
+encoding//src/org/tempuri/AccountPlatServiceSoap.java=UTF-8
+encoding//src/org/tempuri/AccountPlatServiceSoapStub.java=UTF-8
+encoding//src/org/tempuri/ESB.java=UTF-8
+encoding//src/org/tempuri/ESBLocator.java=UTF-8
+encoding//src/org/tempuri/ESBSoap.java=UTF-8
+encoding//src/org/tempuri/ESBSoapStub.java=UTF-8
