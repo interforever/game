@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans spring-beans-2.0.xsd">
+	<bean id="c3p0DataSource" class="com.mchange.v2.c3p0.ComboPooledDataSource"
+		destroy-method="close">
+		<property name="driverClass" value="oracle.jdbc.OracleDriver" />
+		<property name="jdbcUrl" value="jdbc:oracle:thin:@172.21.18.66:1521:USKYECOM" />
+		<property name="user" value="eterm" />
+		<property name="password" value="uskyusky" />
+		<property name="initialPoolSize" value="5" />
+		<property name="minPoolSize" value="1" />
+		<property name="maxPoolSize" value="10" />
+		<property name="acquireIncrement" value="1" />
+		<property name="maxIdleTime" value="15" />
+		<property name="maxStatements" value="100" />
+		<property name="testConnectionOnCheckin" value="true" />
+		<property name="preferredTestQuery" value="select 1" />
+	</bean>
+
+	<bean id="hibernateSessionFactory"
+		class="org.springframework.orm.hibernate3.annotation.AnnotationSessionFactoryBean">
+		<property name="dataSource" ref="c3p0DataSource" />
+		<property name="hibernateProperties">
+			<value>
+				hibernate.dialect=org.hibernate.dialect.Oracle10gDialect
+				hibernate.jdbc.fetch_size=50
+				hibernate.jdbc.batch_size=25
+				hibernate.show_sql=false
+			</value>
+		</property>
+	</bean>
+
+	<bean id="hibernateTemplate" class="org.springframework.orm.hibernate3.HibernateTemplate">
+		<property name="sessionFactory">
+			<ref bean="hibernateSessionFactory" />
+		</property>
+		<property name="jdbcExceptionTranslator">
+			<bean id="jdbcExceptionTranslator"
+				class="org.springframework.jdbc.support.SQLErrorCodeSQLExceptionTranslator">
+				<property name="dataSource" ref="c3p0DataSource" />
+			</bean>
+		</property>
+	</bean>
+</beans>

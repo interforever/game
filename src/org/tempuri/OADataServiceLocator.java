@@ -1,5 +1,5 @@
 /**
- * AccountPlatServiceLocator.java
+ * OADataServiceLocator.java
  *
  * This file was auto-generated from WSDL
  * by the Apache Axis 1.4 Apr 22, 2006 (06:55:48 PDT) WSDL2Java emitter.
@@ -7,53 +7,53 @@
 
 package org.tempuri;
 
-public class AccountPlatServiceLocator extends org.apache.axis.client.Service implements org.tempuri.AccountPlatService {
+public class OADataServiceLocator extends org.apache.axis.client.Service implements org.tempuri.OADataService {
 
-    public AccountPlatServiceLocator() {
+    public OADataServiceLocator() {
     }
 
 
-    public AccountPlatServiceLocator(org.apache.axis.EngineConfiguration config) {
+    public OADataServiceLocator(org.apache.axis.EngineConfiguration config) {
         super(config);
     }
 
-    public AccountPlatServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
+    public OADataServiceLocator(java.lang.String wsdlLoc, javax.xml.namespace.QName sName) throws javax.xml.rpc.ServiceException {
         super(wsdlLoc, sName);
     }
 
-    // Use to get a proxy class for AccountPlatServiceSoap
-    private java.lang.String AccountPlatServiceSoap_address = "http://ws.settlement.fat18.qa.nt.ctripcorp.com/AccountPlat/AccountPlatService.asmx";
+    // Use to get a proxy class for OADataServiceSoap
+    private java.lang.String OADataServiceSoap_address = "http://172.28.84.49:8083/OA_Service/OADataService.asmx";
 
-    public java.lang.String getAccountPlatServiceSoapAddress() {
-        return AccountPlatServiceSoap_address;
+    public java.lang.String getOADataServiceSoapAddress() {
+        return OADataServiceSoap_address;
     }
 
     // The WSDD service name defaults to the port name.
-    private java.lang.String AccountPlatServiceSoapWSDDServiceName = "AccountPlatServiceSoap";
+    private java.lang.String OADataServiceSoapWSDDServiceName = "OADataServiceSoap";
 
-    public java.lang.String getAccountPlatServiceSoapWSDDServiceName() {
-        return AccountPlatServiceSoapWSDDServiceName;
+    public java.lang.String getOADataServiceSoapWSDDServiceName() {
+        return OADataServiceSoapWSDDServiceName;
     }
 
-    public void setAccountPlatServiceSoapWSDDServiceName(java.lang.String name) {
-        AccountPlatServiceSoapWSDDServiceName = name;
+    public void setOADataServiceSoapWSDDServiceName(java.lang.String name) {
+        OADataServiceSoapWSDDServiceName = name;
     }
 
-    public org.tempuri.AccountPlatServiceSoap getAccountPlatServiceSoap() throws javax.xml.rpc.ServiceException {
+    public org.tempuri.OADataServiceSoap getOADataServiceSoap() throws javax.xml.rpc.ServiceException {
        java.net.URL endpoint;
         try {
-            endpoint = new java.net.URL(AccountPlatServiceSoap_address);
+            endpoint = new java.net.URL(OADataServiceSoap_address);
         }
         catch (java.net.MalformedURLException e) {
             throw new javax.xml.rpc.ServiceException(e);
         }
-        return getAccountPlatServiceSoap(endpoint);
+        return getOADataServiceSoap(endpoint);
     }
 
-    public org.tempuri.AccountPlatServiceSoap getAccountPlatServiceSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
+    public org.tempuri.OADataServiceSoap getOADataServiceSoap(java.net.URL portAddress) throws javax.xml.rpc.ServiceException {
         try {
-            org.tempuri.AccountPlatServiceSoapStub _stub = new org.tempuri.AccountPlatServiceSoapStub(portAddress, this);
-            _stub.setPortName(getAccountPlatServiceSoapWSDDServiceName());
+            org.tempuri.OADataServiceSoapStub _stub = new org.tempuri.OADataServiceSoapStub(portAddress, this);
+            _stub.setPortName(getOADataServiceSoapWSDDServiceName());
             return _stub;
         }
         catch (org.apache.axis.AxisFault e) {
@@ -61,8 +61,8 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
         }
     }
 
-    public void setAccountPlatServiceSoapEndpointAddress(java.lang.String address) {
-        AccountPlatServiceSoap_address = address;
+    public void setOADataServiceSoapEndpointAddress(java.lang.String address) {
+        OADataServiceSoap_address = address;
     }
 
     /**
@@ -72,9 +72,9 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
      */
     public java.rmi.Remote getPort(Class serviceEndpointInterface) throws javax.xml.rpc.ServiceException {
         try {
-            if (org.tempuri.AccountPlatServiceSoap.class.isAssignableFrom(serviceEndpointInterface)) {
-                org.tempuri.AccountPlatServiceSoapStub _stub = new org.tempuri.AccountPlatServiceSoapStub(new java.net.URL(AccountPlatServiceSoap_address), this);
-                _stub.setPortName(getAccountPlatServiceSoapWSDDServiceName());
+            if (org.tempuri.OADataServiceSoap.class.isAssignableFrom(serviceEndpointInterface)) {
+                org.tempuri.OADataServiceSoapStub _stub = new org.tempuri.OADataServiceSoapStub(new java.net.URL(OADataServiceSoap_address), this);
+                _stub.setPortName(getOADataServiceSoapWSDDServiceName());
                 return _stub;
             }
         }
@@ -94,8 +94,8 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
             return getPort(serviceEndpointInterface);
         }
         java.lang.String inputPortName = portName.getLocalPart();
-        if ("AccountPlatServiceSoap".equals(inputPortName)) {
-            return getAccountPlatServiceSoap();
+        if ("OADataServiceSoap".equals(inputPortName)) {
+            return getOADataServiceSoap();
         }
         else  {
             java.rmi.Remote _stub = getPort(serviceEndpointInterface);
@@ -105,7 +105,7 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
     }
 
     public javax.xml.namespace.QName getServiceName() {
-        return new javax.xml.namespace.QName("http://tempuri.org/", "AccountPlatService");
+        return new javax.xml.namespace.QName("http://tempuri.org/", "OADataService");
     }
 
     private java.util.HashSet ports = null;
@@ -113,7 +113,7 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
     public java.util.Iterator getPorts() {
         if (ports == null) {
             ports = new java.util.HashSet();
-            ports.add(new javax.xml.namespace.QName("http://tempuri.org/", "AccountPlatServiceSoap"));
+            ports.add(new javax.xml.namespace.QName("http://tempuri.org/", "OADataServiceSoap"));
         }
         return ports.iterator();
     }
@@ -123,8 +123,8 @@ public class AccountPlatServiceLocator extends org.apache.axis.client.Service im
     */
     public void setEndpointAddress(java.lang.String portName, java.lang.String address) throws javax.xml.rpc.ServiceException {
         
-if ("AccountPlatServiceSoap".equals(portName)) {
-            setAccountPlatServiceSoapEndpointAddress(address);
+if ("OADataServiceSoap".equals(portName)) {
+            setOADataServiceSoapEndpointAddress(address);
         }
         else 
 { // Unknown Port Name

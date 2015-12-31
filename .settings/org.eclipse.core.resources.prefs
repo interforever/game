@@ -1,9 +1,9 @@
 eclipse.preferences.version=1
-encoding//src/org/tempuri/AccountPlatService.java=UTF-8
-encoding//src/org/tempuri/AccountPlatServiceLocator.java=UTF-8
-encoding//src/org/tempuri/AccountPlatServiceSoap.java=UTF-8
-encoding//src/org/tempuri/AccountPlatServiceSoapStub.java=UTF-8
-encoding//src/org/tempuri/ESB.java=UTF-8
-encoding//src/org/tempuri/ESBLocator.java=UTF-8
-encoding//src/org/tempuri/ESBSoap.java=UTF-8
-encoding//src/org/tempuri/ESBSoapStub.java=UTF-8
+encoding//src/org/tempuri/ApplicationStatus.java=UTF-8
+encoding//src/org/tempuri/ContractStatusReturnType.java=UTF-8
+encoding//src/org/tempuri/EmployeePrepaidReturnType.java=UTF-8
+encoding//src/org/tempuri/OADataService.java=UTF-8
+encoding//src/org/tempuri/OADataServiceLocator.java=UTF-8
+encoding//src/org/tempuri/OADataServiceSoap.java=UTF-8
+encoding//src/org/tempuri/OADataServiceSoapStub.java=UTF-8
+encoding//src/org/tempuri/SalesStatusReturnType.java=UTF-8

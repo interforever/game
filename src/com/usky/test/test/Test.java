@@ -20,6 +20,7 @@ public class Test {
 	}
 	
 	public static void main(String[] args) {
+		System.out.println(Integer.parseInt("011512010001"));
 		String s = " a  ";
 		String[] ss = s.split(" ");
 		for (String sss : ss) {
