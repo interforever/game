@@ -16,7 +16,7 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
     static org.apache.axis.description.OperationDesc [] _operations;
 
     static {
-        _operations = new org.apache.axis.description.OperationDesc[7];
+        _operations = new org.apache.axis.description.OperationDesc[8];
         _initOperationDesc1();
     }
 
@@ -37,7 +37,7 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
 
         oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetSalesStatus");
-        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "contractNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "appNo"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
         oper.addParameter(param);
         oper.setReturnType(new javax.xml.namespace.QName("http://tempuri.org/", "SalesStatusReturnType"));
@@ -96,6 +96,18 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
         _operations[5] = oper;
 
         oper = new org.apache.axis.description.OperationDesc();
+        oper.setName("IsExistEmployeeLoanByEmpCode");
+        param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "empCode"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
+        param.setOmittable(true);
+        oper.addParameter(param);
+        oper.setReturnType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
+        oper.setReturnClass(boolean.class);
+        oper.setReturnQName(new javax.xml.namespace.QName("http://tempuri.org/", "IsExistEmployeeLoanByEmpCodeResult"));
+        oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
+        oper.setUse(org.apache.axis.constants.Use.LITERAL);
+        _operations[6] = oper;
+
+        oper = new org.apache.axis.description.OperationDesc();
         oper.setName("GetEmployeePrepaids");
         param = new org.apache.axis.description.ParameterDesc(new javax.xml.namespace.QName("http://tempuri.org/", "employeeCode"), org.apache.axis.description.ParameterDesc.IN, new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"), java.lang.String.class, false, false);
         param.setOmittable(true);
@@ -110,7 +122,7 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
         param.setItemQName(new javax.xml.namespace.QName("http://tempuri.org/", "EmployeePrepaidReturnType"));
         oper.setStyle(org.apache.axis.constants.Style.WRAPPED);
         oper.setUse(org.apache.axis.constants.Use.LITERAL);
-        _operations[6] = oper;
+        _operations[7] = oper;
 
     }
 
@@ -156,6 +168,15 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
             cachedSerClasses.add(cls);
             qName = new javax.xml.namespace.QName("http://tempuri.org/", "EmployeePrepaidReturnType");
             qName2 = new javax.xml.namespace.QName("http://tempuri.org/", "EmployeePrepaidReturnType");
+            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
+            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
+
+            qName = new javax.xml.namespace.QName("http://tempuri.org/", "ArrayOfString");
+            cachedSerQNames.add(qName);
+            cls = java.lang.String[].class;
+            cachedSerClasses.add(cls);
+            qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
+            qName2 = new javax.xml.namespace.QName("http://tempuri.org/", "string");
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
@@ -280,7 +301,7 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String contractNo) throws java.rmi.RemoteException {
+    public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String appNo) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
@@ -296,7 +317,7 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
 
         setRequestHeaders(_call);
         setAttachments(_call);
- try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {contractNo});
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {appNo});
 
         if (_resp instanceof java.rmi.RemoteException) {
             throw (java.rmi.RemoteException)_resp;
@@ -450,12 +471,46 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
 }
     }
 
-    public org.tempuri.EmployeePrepaidReturnType[] getEmployeePrepaids(java.lang.String employeeCode, java.lang.String reimbursementId) throws java.rmi.RemoteException {
+    public boolean isExistEmployeeLoanByEmpCode(java.lang.String empCode) throws java.rmi.RemoteException {
         if (super.cachedEndpoint == null) {
             throw new org.apache.axis.NoEndPointException();
         }
         org.apache.axis.client.Call _call = createCall();
         _call.setOperation(_operations[6]);
+        _call.setUseSOAPAction(true);
+        _call.setSOAPActionURI("http://tempuri.org/IsExistEmployeeLoanByEmpCode");
+        _call.setEncodingStyle(null);
+        _call.setProperty(org.apache.axis.client.Call.SEND_TYPE_ATTR, Boolean.FALSE);
+        _call.setProperty(org.apache.axis.AxisEngine.PROP_DOMULTIREFS, Boolean.FALSE);
+        _call.setSOAPVersion(org.apache.axis.soap.SOAPConstants.SOAP11_CONSTANTS);
+        _call.setOperationName(new javax.xml.namespace.QName("http://tempuri.org/", "IsExistEmployeeLoanByEmpCode"));
+
+        setRequestHeaders(_call);
+        setAttachments(_call);
+ try {        java.lang.Object _resp = _call.invoke(new java.lang.Object[] {empCode});
+
+        if (_resp instanceof java.rmi.RemoteException) {
+            throw (java.rmi.RemoteException)_resp;
+        }
+        else {
+            extractAttachments(_call);
+            try {
+                return ((java.lang.Boolean) _resp).booleanValue();
+            } catch (java.lang.Exception _exception) {
+                return ((java.lang.Boolean) org.apache.axis.utils.JavaUtils.convert(_resp, boolean.class)).booleanValue();
+            }
+        }
+  } catch (org.apache.axis.AxisFault axisFaultException) {
+  throw axisFaultException;
+}
+    }
+
+    public org.tempuri.EmployeePrepaidReturnType[] getEmployeePrepaids(java.lang.String employeeCode, java.lang.String reimbursementId) throws java.rmi.RemoteException {
+        if (super.cachedEndpoint == null) {
+            throw new org.apache.axis.NoEndPointException();
+        }
+        org.apache.axis.client.Call _call = createCall();
+        _call.setOperation(_operations[7]);
         _call.setUseSOAPAction(true);
         _call.setSOAPActionURI("http://tempuri.org/GetEmployeePrepaids");
         _call.setEncodingStyle(null);

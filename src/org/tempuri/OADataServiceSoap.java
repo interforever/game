@@ -17,7 +17,7 @@ public interface OADataServiceSoap extends java.rmi.Remote {
     /**
      * 收入合同评审单合同状态查询
      */
-    public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String contractNo) throws java.rmi.RemoteException;
+    public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String appNo) throws java.rmi.RemoteException;
 
     /**
      * 采购单状态查询
@@ -38,6 +38,11 @@ public interface OADataServiceSoap extends java.rmi.Remote {
      * 根据员工号获取其控股OA待审批（及被拒绝）单据数量
      */
     public int getEmployeePendingCountInEntities(java.lang.String employeeCode) throws java.rmi.RemoteException;
+
+    /**
+     * 根据员工号获取其是否有未结欠款
+     */
+    public boolean isExistEmployeeLoanByEmpCode(java.lang.String empCode) throws java.rmi.RemoteException;
 
     /**
      * 根据工号及报销单号查询借款单信息，报销单号可为空

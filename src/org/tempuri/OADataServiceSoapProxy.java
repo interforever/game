@@ -50,10 +50,10 @@ public class OADataServiceSoapProxy implements org.tempuri.OADataServiceSoap {
     return oADataServiceSoap.getContractStatus(contractNo);
   }
   
-  public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String contractNo) throws java.rmi.RemoteException{
+  public org.tempuri.SalesStatusReturnType getSalesStatus(java.lang.String appNo) throws java.rmi.RemoteException{
     if (oADataServiceSoap == null)
       _initOADataServiceSoapProxy();
-    return oADataServiceSoap.getSalesStatus(contractNo);
+    return oADataServiceSoap.getSalesStatus(appNo);
   }
   
   public org.tempuri.ApplicationStatus getPurchaseStatus(java.lang.String appNo) throws java.rmi.RemoteException{
@@ -84,6 +84,12 @@ public class OADataServiceSoapProxy implements org.tempuri.OADataServiceSoap {
     if (oADataServiceSoap == null)
       _initOADataServiceSoapProxy();
     return oADataServiceSoap.getEmployeePrepaids(employeeCode, reimbursementId);
+  }
+  
+  public boolean isExistEmployeeLoanByEmpCode(java.lang.String empCode) throws java.rmi.RemoteException{
+    if (oADataServiceSoap == null)
+      _initOADataServiceSoapProxy();
+    return oADataServiceSoap.isExistEmployeeLoanByEmpCode(empCode);
   }
   
   
