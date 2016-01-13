@@ -80,16 +80,16 @@ public class OADataServiceSoapProxy implements org.tempuri.OADataServiceSoap {
     return oADataServiceSoap.getEmployeePendingCountInEntities(employeeCode);
   }
   
-  public org.tempuri.EmployeePrepaidReturnType[] getEmployeePrepaids(java.lang.String employeeCode, java.lang.String reimbursementId) throws java.rmi.RemoteException{
-    if (oADataServiceSoap == null)
-      _initOADataServiceSoapProxy();
-    return oADataServiceSoap.getEmployeePrepaids(employeeCode, reimbursementId);
-  }
-  
   public boolean isExistEmployeeLoanByEmpCode(java.lang.String empCode) throws java.rmi.RemoteException{
     if (oADataServiceSoap == null)
       _initOADataServiceSoapProxy();
     return oADataServiceSoap.isExistEmployeeLoanByEmpCode(empCode);
+  }
+  
+  public org.tempuri.EmployeePrepaidReturnType[] getEmployeePrepaids(java.lang.String employeeCode, java.lang.String reimbursementId) throws java.rmi.RemoteException{
+    if (oADataServiceSoap == null)
+      _initOADataServiceSoapProxy();
+    return oADataServiceSoap.getEmployeePrepaids(employeeCode, reimbursementId);
   }
   
   

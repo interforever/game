@@ -18,10 +18,6 @@ public class ContractStatusReturnType  implements java.io.Serializable {
 
     private java.lang.String agreementCompany;
 
-    private boolean isAmountVariable;
-
-    private java.lang.String[] payCompaines;
-
     public ContractStatusReturnType() {
     }
 
@@ -30,16 +26,12 @@ public class ContractStatusReturnType  implements java.io.Serializable {
            org.tempuri.ApplicationStatus applicationStatus,
            java.math.BigDecimal totalAmount,
            java.math.BigDecimal balancedAmount,
-           java.lang.String agreementCompany,
-           boolean isAmountVariable,
-           java.lang.String[] payCompaines) {
+           java.lang.String agreementCompany) {
            this.applicationId = applicationId;
            this.applicationStatus = applicationStatus;
            this.totalAmount = totalAmount;
            this.balancedAmount = balancedAmount;
            this.agreementCompany = agreementCompany;
-           this.isAmountVariable = isAmountVariable;
-           this.payCompaines = payCompaines;
     }
 
 
@@ -142,46 +134,6 @@ public class ContractStatusReturnType  implements java.io.Serializable {
         this.agreementCompany = agreementCompany;
     }
 
-
-    /**
-     * Gets the isAmountVariable value for this ContractStatusReturnType.
-     * 
-     * @return isAmountVariable
-     */
-    public boolean isIsAmountVariable() {
-        return isAmountVariable;
-    }
-
-
-    /**
-     * Sets the isAmountVariable value for this ContractStatusReturnType.
-     * 
-     * @param isAmountVariable
-     */
-    public void setIsAmountVariable(boolean isAmountVariable) {
-        this.isAmountVariable = isAmountVariable;
-    }
-
-
-    /**
-     * Gets the payCompaines value for this ContractStatusReturnType.
-     * 
-     * @return payCompaines
-     */
-    public java.lang.String[] getPayCompaines() {
-        return payCompaines;
-    }
-
-
-    /**
-     * Sets the payCompaines value for this ContractStatusReturnType.
-     * 
-     * @param payCompaines
-     */
-    public void setPayCompaines(java.lang.String[] payCompaines) {
-        this.payCompaines = payCompaines;
-    }
-
     private java.lang.Object __equalsCalc = null;
     public synchronized boolean equals(java.lang.Object obj) {
         if (!(obj instanceof ContractStatusReturnType)) return false;
@@ -208,11 +160,7 @@ public class ContractStatusReturnType  implements java.io.Serializable {
               this.balancedAmount.equals(other.getBalancedAmount()))) &&
             ((this.agreementCompany==null && other.getAgreementCompany()==null) || 
              (this.agreementCompany!=null &&
-              this.agreementCompany.equals(other.getAgreementCompany()))) &&
-            this.isAmountVariable == other.isIsAmountVariable() &&
-            ((this.payCompaines==null && other.getPayCompaines()==null) || 
-             (this.payCompaines!=null &&
-              java.util.Arrays.equals(this.payCompaines, other.getPayCompaines())));
+              this.agreementCompany.equals(other.getAgreementCompany())));
         __equalsCalc = null;
         return _equals;
     }
@@ -238,18 +186,6 @@ public class ContractStatusReturnType  implements java.io.Serializable {
         }
         if (getAgreementCompany() != null) {
             _hashCode += getAgreementCompany().hashCode();
-        }
-        _hashCode += (isIsAmountVariable() ? Boolean.TRUE : Boolean.FALSE).hashCode();
-        if (getPayCompaines() != null) {
-            for (int i=0;
-                 i<java.lang.reflect.Array.getLength(getPayCompaines());
-                 i++) {
-                java.lang.Object obj = java.lang.reflect.Array.get(getPayCompaines(), i);
-                if (obj != null &&
-                    !obj.getClass().isArray()) {
-                    _hashCode += obj.hashCode();
-                }
-            }
         }
         __hashCodeCalc = false;
         return _hashCode;
@@ -292,20 +228,6 @@ public class ContractStatusReturnType  implements java.io.Serializable {
         elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
         elemField.setMinOccurs(0);
         elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("isAmountVariable");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "IsAmountVariable"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "boolean"));
-        elemField.setNillable(false);
-        typeDesc.addFieldDesc(elemField);
-        elemField = new org.apache.axis.description.ElementDesc();
-        elemField.setFieldName("payCompaines");
-        elemField.setXmlName(new javax.xml.namespace.QName("http://tempuri.org/", "PayCompaines"));
-        elemField.setXmlType(new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string"));
-        elemField.setMinOccurs(0);
-        elemField.setNillable(false);
-        elemField.setItemQName(new javax.xml.namespace.QName("http://tempuri.org/", "string"));
         typeDesc.addFieldDesc(elemField);
     }
 

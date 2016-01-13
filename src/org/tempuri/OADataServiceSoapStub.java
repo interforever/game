@@ -171,15 +171,6 @@ public class OADataServiceSoapStub extends org.apache.axis.client.Stub implement
             cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
             cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
 
-            qName = new javax.xml.namespace.QName("http://tempuri.org/", "ArrayOfString");
-            cachedSerQNames.add(qName);
-            cls = java.lang.String[].class;
-            cachedSerClasses.add(cls);
-            qName = new javax.xml.namespace.QName("http://www.w3.org/2001/XMLSchema", "string");
-            qName2 = new javax.xml.namespace.QName("http://tempuri.org/", "string");
-            cachedSerFactories.add(new org.apache.axis.encoding.ser.ArraySerializerFactory(qName, qName2));
-            cachedDeserFactories.add(new org.apache.axis.encoding.ser.ArrayDeserializerFactory());
-
             qName = new javax.xml.namespace.QName("http://tempuri.org/", "ContractStatusReturnType");
             cachedSerQNames.add(qName);
             cls = org.tempuri.ContractStatusReturnType.class;
