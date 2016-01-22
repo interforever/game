@@ -22,7 +22,7 @@ public class OADataServiceLocator extends org.apache.axis.client.Service impleme
     }
 
     // Use to get a proxy class for OADataServiceSoap
-    private java.lang.String OADataServiceSoap_address = "http://oa.cn1.global.ctrip.com/OAService/OADataService.asmx";
+    private java.lang.String OADataServiceSoap_address = "http://172.28.84.49:8083/OA_Service/OADataService.asmx";
 
     public java.lang.String getOADataServiceSoapAddress() {
         return OADataServiceSoap_address;
