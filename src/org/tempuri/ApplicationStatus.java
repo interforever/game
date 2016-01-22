@@ -24,6 +24,7 @@ public class ApplicationStatus implements java.io.Serializable {
     public static final java.lang.String _Rejected = "Rejected";
     public static final java.lang.String _Canceled = "Canceled";
     public static final java.lang.String _Template = "Template";
+    public static final java.lang.String _ToPay = "ToPay";
     public static final ApplicationStatus NotExist = new ApplicationStatus(_NotExist);
     public static final ApplicationStatus Unsubmitted = new ApplicationStatus(_Unsubmitted);
     public static final ApplicationStatus Pending = new ApplicationStatus(_Pending);
@@ -31,6 +32,7 @@ public class ApplicationStatus implements java.io.Serializable {
     public static final ApplicationStatus Rejected = new ApplicationStatus(_Rejected);
     public static final ApplicationStatus Canceled = new ApplicationStatus(_Canceled);
     public static final ApplicationStatus Template = new ApplicationStatus(_Template);
+    public static final ApplicationStatus ToPay = new ApplicationStatus(_ToPay);
     public java.lang.String getValue() { return _value_;}
     public static ApplicationStatus fromValue(java.lang.String value)
           throws java.lang.IllegalArgumentException {
